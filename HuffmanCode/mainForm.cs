@@ -263,8 +263,8 @@ namespace HuffmanCode
             foreach (var item in codeTable)
             {
                 List<int> code = new List<int>(item.Value);
-                foreach (var key in code)
-                    codes[index] += key.ToString();
+                foreach (var element in code)
+                    codes[index] += element.ToString();
                 ++index;
             }
             index = 0;
@@ -290,11 +290,11 @@ namespace HuffmanCode
                 {
                     foreach (var item in codeTable)
                     {
-                        if (item.Key == symbol)
+                        if (item.Key.Equals(symbol))
                         {
                             List<int> code = new List<int>(item.Value);
-                            foreach (var key in code)
-                                outputBits.Add(key);
+                            foreach (var element in code)
+                                outputBits.Add(element);
                         }
                     }
                 }
