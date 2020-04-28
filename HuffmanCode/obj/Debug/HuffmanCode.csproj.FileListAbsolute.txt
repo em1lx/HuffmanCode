@@ -1,0 +1,10 @@
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\bin\Debug\HuffmanCode.exe.config
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\bin\Debug\HuffmanCode.exe
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\bin\Debug\HuffmanCode.pdb
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.csprojAssemblyReference.cache
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.mainForm.resources
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.Properties.Resources.resources
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.csproj.GenerateResource.cache
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.csproj.CoreCompileInputs.cache
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.exe
+C:\Users\emil\Desktop\HuffmanCode\HuffmanCode\obj\Debug\HuffmanCode.pdb
