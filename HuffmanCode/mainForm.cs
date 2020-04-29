@@ -201,23 +201,23 @@ namespace HuffmanCode
 
         public void createTree()
         {
-            LinkedList<Node> nodes = new LinkedList<Node>();
+            List<Node> nodes = new List<Node>();
             foreach (var item in symbols.OrderBy(item => item.Value))
             {
                 Node node = new Node();
                 node.symbol = item.Key;
                 node.frequence = item.Value;
-                nodes.AddLast(node);
+                nodes.Add(node);
             }
 
             while (!nodes.Count().Equals(1))
             {
-                nodes = new LinkedList<Node>(nodes.OrderBy(item => item.frequence));
-                Node leftNode = new Node(); leftNode = nodes.First(); nodes.RemoveFirst();
-                Node rightNode = new Node(); rightNode = nodes.First(); nodes.RemoveFirst();
+                nodes = new List<Node>(nodes.OrderBy(item => item.frequence));
+                Node leftNode = new Node(); leftNode = nodes.First(); nodes.Remove(nodes.First());
+                Node rightNode = new Node(); rightNode = nodes.First(); nodes.Remove(nodes.First());
 
                 Node sourceNode = new Node(leftNode, rightNode);
-                nodes.AddLast(sourceNode);
+                nodes.Add(sourceNode);
             }
             Node rootNode = new Node();
             rootNode = nodes.First();
