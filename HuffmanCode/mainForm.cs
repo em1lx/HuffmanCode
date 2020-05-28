@@ -135,34 +135,44 @@ namespace HuffmanCode
                 {
                     if (openFile.FileName.Contains(".bin"))
                     {
-                        compressButton.Enabled = false;
-                        recoverButton.Enabled = true;
-
-                        if (!check)
-                            countOfBits = outputBits.Count();
-                        inputBits.Clear();
-
-                        byte[] data = new byte[fstream.Length];
-                        fstream.Read(data, 0, data.Length);
-
-                        for (int i = 0; i < data.Length; i++)
+                        try
                         {
-                            byte b = data[i];
-                            for (int j = 0; j < 8; j++)
+                            if (analysisTextBox.TextLength.Equals(0))
+                                throw new Exception("Cannot perform this operation!");
+
+                            compressButton.Enabled = false;
+                            recoverButton.Enabled = true;
+
+                            if (!check)
+                                countOfBits = outputBits.Count();
+                            inputBits.Clear();
+
+                            byte[] data = new byte[fstream.Length];
+                            fstream.Read(data, 0, data.Length);
+
+                            for (int i = 0; i < data.Length; i++)
                             {
-                                --countOfBits;
-                                if (!(b & (1 << j)).Equals(0))
-                                    inputBits.Add(1);
-                                else inputBits.Add(0);
+                                byte b = data[i];
+                                for (int j = 0; j < 8; j++)
+                                {
+                                    --countOfBits;
+                                    if (!(b & (1 << j)).Equals(0))
+                                        inputBits.Add(1);
+                                    else inputBits.Add(0);
 
-                                if (countOfBits.Equals(0))
-                                    break;
+                                    if (countOfBits.Equals(0))
+                                        break;
+                                }
                             }
-                        }
-                        inputBits.Reverse();
+                            inputBits.Reverse();
 
-                        foreach (var bit in inputBits)
-                            inputTextBox.AppendText(bit.ToString());
+                            foreach (var bit in inputBits)
+                                inputTextBox.AppendText(bit.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                     else
                     {
@@ -342,7 +352,7 @@ namespace HuffmanCode
             codeTable.Clear();
             try
             {
-                if (inputTextBox.Text.Length.Equals(0))
+                if (inputTextBox.TextLength.Equals(0))
                     throw new Exception("Cannot perform this operation!");
                 analysisTextBox.Clear();
                 outputTextBox.Clear();
@@ -362,7 +372,7 @@ namespace HuffmanCode
         {
             try
             {
-                if (analysisTextBox.Text.Length.Equals(0) || inputTextBox.Text.Length.Equals(0))
+                if (analysisTextBox.TextLength.Equals(0) || inputTextBox.TextLength.Equals(0))
                     throw new Exception("Cannot perform this operation!");
                 outputTextBox.Clear();
 
