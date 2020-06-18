@@ -242,12 +242,12 @@ namespace HuffmanCode
         {
             if (node.leftNode != null)
             {
-                code.Add(0);
+                code.Add(1);
                 createCodeTable(node.leftNode);
             }
             if (node.rightNode != null)
             {
-                code.Add(1);
+                code.Add(0);
                 createCodeTable(node.rightNode);
             }
             if (node.symbol != null)
